@@ -10,8 +10,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 
-//TODO: i need redirect method
-
 @Controller
 public class UserController extends BaseController {
 
@@ -21,7 +19,6 @@ public class UserController extends BaseController {
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
 
     @GetMapping("/register")
     public String register() {

@@ -24,7 +24,14 @@ import java.util.UUID;
  * <br>
  * SELECT BIN_TO_UUID(id) FROM table_name
  */
-@MappedSuperclass //todo: BaseUuidEntity<I> implements Identifiable<I> maybe should not implement <I>.
+
+/**
+ * TODO: for best practises BaseUuidEntity to extend BaseEntity which will implement equals() and hasCode()
+ *
+ * @see <a href="https://vladmihalcea.com/the-best-way-to-implement-equals-hashcode-and-tostring-with-jpa-and-hibernate"></a>
+ */
+
+@MappedSuperclass
 abstract class BaseUuidEntity implements Identifiable<UUID> {
 
     @Id

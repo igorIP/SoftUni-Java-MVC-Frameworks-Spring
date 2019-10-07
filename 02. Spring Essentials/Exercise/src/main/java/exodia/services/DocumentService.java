@@ -17,6 +17,4 @@ public interface DocumentService extends Service<Document, UUID> {
     boolean print(String id);
 
     List<DocumentTitleAndIdViewModel> findAllShortView();
-
-
 }

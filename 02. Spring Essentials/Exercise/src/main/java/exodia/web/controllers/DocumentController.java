@@ -12,13 +12,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.support.SessionStatus;
 
-//TODO:  redirect method
-
 @Controller
 public class DocumentController extends BaseController {
 
     private final static String DOCUMENT = "document";
-
     private final DocumentService documentService;
 
     @Autowired

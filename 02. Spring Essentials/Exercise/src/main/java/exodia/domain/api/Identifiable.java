@@ -7,4 +7,5 @@ package exodia.domain.api;
  * @param <I> ID type of the entity class
  */
 public interface Identifiable<I> {
+    I getId();
 }

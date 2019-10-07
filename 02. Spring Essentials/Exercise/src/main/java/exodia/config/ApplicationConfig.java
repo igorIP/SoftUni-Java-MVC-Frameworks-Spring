@@ -13,6 +13,11 @@ import java.util.TimeZone;
 @Configuration
 public class ApplicationConfig {
 
+    /**
+     * Configure {@link ModelMapper} to use field access (hibernate will use reflection to access fields of the entity),
+     * instead of property(hibernate will use the getters of the entity) access for mapping between classes
+     * and instances thus promoting better encapsulation and immutability.
+     */
     @Bean
     ModelMapper createModelMapper() {
         ModelMapper modelMapper = new ModelMapper();
@@ -24,10 +29,11 @@ public class ApplicationConfig {
         return modelMapper;
     }
 
+    /**
+     * Set system {@link TimeZone} to {@value #"UTC"} to match setting used for database connection
+     */
     @PostConstruct
     void started() {
         TimeZone.setDefault(TimeZone.getTimeZone("UTC"));
     }
-
-
 }

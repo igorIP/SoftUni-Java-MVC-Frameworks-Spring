@@ -1,7 +1,5 @@
 package exodia.services;
 
-import exodia.domain.api.Bindable;
-import exodia.domain.api.Viewable;
 import exodia.domain.entities.Document;
 import exodia.domain.models.DocumentDetailsViewModel;
 import exodia.domain.models.DocumentTitleAndIdViewModel;
@@ -28,7 +26,6 @@ public class DocumentServiceImpl extends BaseService<Document, UUID, DocumentRep
                                   ModelMapper mapper) {
         super(repository, validator, mapper);
     }
-
 
     @Override
     public Optional<DocumentDetailsViewModel> schedule(DocumentScheduleBindingModel bindingModel) {

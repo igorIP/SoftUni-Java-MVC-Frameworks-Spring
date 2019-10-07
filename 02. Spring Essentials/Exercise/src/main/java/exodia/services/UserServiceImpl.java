@@ -15,11 +15,9 @@ import javax.validation.Validator;
 import java.util.Optional;
 import java.util.UUID;
 
-//TODO: @Log-logger
 @Service
 @Transactional
 public class UserServiceImpl extends BaseService<User, UUID, UserRepository> implements UserService {
-
 
     @Autowired
     public UserServiceImpl(UserRepository repository,
@@ -28,30 +26,22 @@ public class UserServiceImpl extends BaseService<User, UUID, UserRepository> imp
         super(repository, validator, mapper);
     }
 
-
     @Override
     @Transactional(readOnly = true)
     public boolean register(UserRegisterBindingModel bindingModel) {
-        if (!(bindingModel.getPassword().equals(bindingModel.getConfirmPassword()))) {            //TODO: logger messages
-            //TODO: logger messages
+        if (!(bindingModel.getPassword().equals(bindingModel.getConfirmPassword()))) {
             return false;
         }
         if (!validator.validate(bindingModel).isEmpty()) {
-            //TODO: logger messages
             return false;
         }
         if (repository.countAllByUsernameEquals(bindingModel.getUsername()) > 0) {
-            //TODO: logger messages
             return false;
         }
         if (repository.countAllByEmailEquals(bindingModel.getEmail()) > 0) {
-            //TODO: logger messages
             return false;
         }
-        //TODO: Hash Password
-
         return create(bindingModel);
-
     }
 
     @Override
@@ -75,5 +65,4 @@ public class UserServiceImpl extends BaseService<User, UUID, UserRepository> imp
     Optional<V> findById(UUID id, Class<V> viewModelClass) {
         return Optional.empty();
     }
-
 }

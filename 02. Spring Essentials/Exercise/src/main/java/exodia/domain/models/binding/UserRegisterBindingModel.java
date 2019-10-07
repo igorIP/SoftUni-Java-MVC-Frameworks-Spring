@@ -4,6 +4,7 @@ import exodia.domain.api.Bindable;
 import exodia.domain.entities.User;
 
 public class UserRegisterBindingModel implements Bindable<User> {
+
     private String username;
     private String password;
     private String confirmPassword;

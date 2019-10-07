@@ -1,15 +1,14 @@
 package exodia.config;
 
-//import org.softuni.exodia.web.interceptors.AuthenticatedInterceptor;
-//import org.softuni.exodia.web.interceptors.ThymeleafLayoutInterceptor;
-
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 
-//If we want to customize the default Spring configuration,
-// we need to implement the WebMvcConfigurer interface:
+/**
+ * For now Spring's auto configuration takes care of everything.
+ * If we want to add additional custom configuration (ex: make custom folders with templates)
+ * we need to implement the {@link WebMvcConfigurer} interface.
+ */
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
 
@@ -23,23 +22,5 @@ public class WebConfig implements WebMvcConfigurer {
     public static final String URL_DETAILS = "/details";
     public static final String URL_PRINT = "/print";
     public static final String URL_DOWNLOAD = "/download";
-//
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(
-//                AuthenticatedInterceptor
-//                        .builder()
-//                        .withSessionAttributeName(SESSION_ATTRIBUTE_USERNAME)
-//                        .withAuthenticatedRedirectUrl(URL_INDEX)
-//                        .withGuestRedirectUrl(URL_LOGIN)
-//                        .build());
-//
-//        registry.addInterceptor(
-//                ThymeleafLayoutInterceptor
-//                        .builder()
-//                        .withDefaultLayout("/layouts/default")
-//                        .withViewAttribute("view")
-//                        .withViewPrefix("/views/")
-//                        .build());
-//    }
+
 }

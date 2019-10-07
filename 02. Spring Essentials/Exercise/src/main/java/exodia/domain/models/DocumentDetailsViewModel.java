@@ -7,6 +7,9 @@ import java.io.Serializable;
 
 public class DocumentDetailsViewModel implements Viewable<Document>, Serializable {
 
+    //hint: serialVersionUID is a unique identifier for Serializable classes.
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String title;
     private String content;
